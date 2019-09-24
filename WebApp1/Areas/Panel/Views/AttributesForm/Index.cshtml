@@ -1,0 +1,126 @@
+﻿
+
+
+        
+                <h4 style="font-family:Titr;">افزودن مشخصات کالا</h4>
+           
+           <table class="table table-bordered">
+               <tr class="d-md-table-row">
+                   <td>
+                       <p style="font-family:'B Yekan';">نام محصول</p>
+                      
+                   </td>
+                   <td>
+                       <p style="font-family:'B Yekan';">دسته بندی</p>
+                       
+                   </td>
+                   <td>
+                       <p style="font-family:'B Yekan';">ابعاد</p>
+                       
+                   </td>
+                   <td><p style="font-family:'B Yekan';">رنگ </p></td>
+               </tr>
+               <tr>
+                   <td>
+                       <input class="form-control" ng-model="txtName" type="text" placeholder=" " style="font-family:'B Yekan';" />
+                   </td>
+                   <td>
+                       <select ng-model="SelCategory">
+                           <option value="" disabled>دسته بندی را انتخاب کنید </option>
+                           <option ng-repeat="Item in ListAllCategory" value="{{Item.ID}}">{{Item.Name}}</option>
+                       </select>
+                   </td>
+                   <td>
+                       <input class="form-control" ng-model="txtDimension" type="text" placeholder=" " style="font-family:'B Yekan';" />
+                   </td>
+                   <td><input class="form-control" ng-model="txtColor" type="text" placeholder=" " style="font-family:'B Yekan';" /></td>
+               </tr>
+               <tr>
+                   
+                   <td><p style="font-family:'B Yekan';">وزن </p></td>
+                   <td><p style="font-family:'B Yekan';">نوع بسته بندی  </p></td>
+                   <td><p style="font-family:'B Yekan';">اقلام همراه</p></td>
+                   <td><p style="font-family:'B Yekan';">سایر ویژگی ها </p></td>
+               </tr>
+               <tr>
+                   
+                   <td><input class="form-control" ng-model="txtWeigh" type="text" placeholder=" " style="font-family:'B Yekan';" /></td>
+                   <td><input class="form-control" ng-model="txtPack" type="text" placeholder=" " style="font-family:'B Yekan';" /></td>
+                   <td><input class="form-control" ng-model="txtExtra" type="text" placeholder=" " style="font-family:'B Yekan';" /></td>
+                   <td><input class="form-control" ng-model="txtDesc" type="text" placeholder=" " style="font-family:'B Yekan';" /></td>
+               </tr>
+               
+              
+                  
+           </table>
+               
+ <p style="font-family:'B Yekan';color:blue;">آپلود عکس محصول</p>
+
+<div id="dropzone2" class="dropzone sm" options="dz_PersImageOptions" methods="dz_PersImageMethods" callbacks="dzCallbacks" ng-dropzone></div>      
+                    
+                             
+                <button ng-disabled="varStatusDisSave" ng-click="FunctionSave()" type="button" class="btn btn-default"  style="font-family:'B Yekan';float:left;">افزودن</button>
+                <button ng-disabled="varStatusDisUpdate" ng-click="FunctionUpdate()" type="button" class="btn btn-default"  style="font-family:'B Yekan';float:left;">ویرایش</button>
+     
+
+
+<form style="position:center;padding-top:30px;">
+    <br />
+    <p style="font-family:Titr;font-size:16px;color:black;text-align:right;">لیست مشخصات کالا </p>
+    <br />
+    
+
+
+    <table class="table table-bordered table-padding" dir="rtl">
+        <tr>
+            <td colspan="5">
+                <input type="text" placeholder="جست و جو" style="font-family:'B Yekan'" class="form-control" ng-model="txtSearch" />
+            </td>
+        </tr>
+        <tr>
+           
+            <td style="font-family:'B Yekan';text-align:center;">شماره</td>
+            <td></td>
+            <td ng-show="false" style="font-family:'B Yekan';text-align:center;">ID</td>
+            <td style="font-family:'B Yekan';text-align:center;">عنوان</td>
+            <td style="font-family:'B Yekan';text-align:center;">عنوان دسته بندی </td>
+            <td style="font-family:'B Yekan';text-align:center;">عملیات</td>
+        </tr>
+        <tr ng-repeat="Item in ListAllAttributes | filter:txtSearch">
+            <td style="font-family:'B Yekan';text-align:center;">{{$index+1}}</td>
+            <td ng-show="false" style="font-family:'B Yekan';text-align:center;">{{Item.ID}}</td>
+            <td style="text-align: center">
+                <img class="img-rounded" style="width: 150px; height: 80px;" ng-src="@Url.Content("~/FileArchive/{{Item.Img_Url}}")" alt="...">
+            </td><td style="font-family:'B Yekan';text-align:center;">{{Item.Name}}</td>
+            <td style="font-family:'B Yekan';text-align:center;">{{Item.CatName}}</td>
+            <td>
+                <input type="button" class="btn btn-danger" value="حذف" ng-click="FunDelete(Item.ID)" style="font-family:'B Yekan'" />
+                <!--ModalButton-->
+                <button type="button" class="btn btn-default" ng-click="funUpdateModal(Item)" style="font-family:'B Yekan'">ویرایش</button>
+            </td>
+        </tr>
+    </table>
+
+
+
+</form>
+
+
+
+
+
+
+
+
+@section DeclareJS{
+    <script src="~/Areas/Panel/Scripts/AttributesForm/JsAttribuesForm.js"></script>
+    }
+   
+
+
+
+
+
+
+
+

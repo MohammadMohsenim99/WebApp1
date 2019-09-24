@@ -1,0 +1,187 @@
+﻿
+
+<section>
+    <div>
+        <div class="row">
+            <div class="col">
+                <!-- section title -->
+                <div class="section-title-wrap">
+                    <div class="section-title">
+                        <h2 class="headFont">جدیدترین کالا ها </h2>
+                    </div>
+                </div>
+                <!-- End of section title -->
+            </div>
+        </div>
+
+        <table>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+
+
+        <div class="row" >
+            
+                <!-- single product -->
+                <div class="single-product type2 col-lg-4" ng-repeat="Item in ListAllProductShow" style="padding-bottom:50px">
+
+                    <div class="product-item">
+                        <div class="product-thumb">
+                            <!-- Product Image -->
+                            <div class="product-image">
+                                <a href="">
+                                    <img class="normal-state" ng-src="@Url.Content("~/FileArchive/{{Item.Img_Url}}")" alt="..." ng-click="ShowMore(Item)">
+
+                                </a>
+                            </div>
+                            <!-- End of Product Image -->
+                            <!-- product button -->
+                            <div class="product-buttons">
+                                <div class="quick-btn">
+                                    <div class="quick-icon-btn">
+                                        <a ng-click="ShowMore(Item)" class="quick_view" >
+                                            <span class="product-icon"><i class="fa fa-eye" aria-hidden="true"></i></span>
+                                            <span class="icon-title txtFont">خصوصیات</span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="addto-cart-btn">
+                                    <div class="addto-icon-btn">
+                                        <a ng-click="BuyList(Item)">
+                                            <span class="product-icon"><img src="~/assets/img/icons/add-bag.svg" alt="" class="svg"></span>
+                                            <span class="icon-title txtFont">سبد خرید</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="wishlist-btn">
+                                    <div class="wishlist-icon-btn">
+                                        <a ng-click="WishList(Item)">
+                                            <span class="product-icon"><img src="~/assets/img/icons/wishlist.svg" alt="" class="svg"></span>
+                                            <span class="icon-title txtFont">علاقه مندی ها</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="copmare-btn">
+                                    <div class="compare-icon-btn">
+                                        <a href="#">
+                                            <span class="product-icon"><img src="~/assets/img/icons/compare.svg" alt="" class="svg"></span>
+                                            <span class="icon-title txtFont">مقایسه</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End of product button -->
+                        </div>
+
+
+                        <!-- product info -->
+                        <div class="product-info">
+                            <div class="product-rating">
+                                <div class="star-rating">
+                                    <span></span>
+                                </div>
+                            </div>
+
+                            <!-- product title -->
+                            <div class="product-title">
+                                <h4 class="txtFont" ng-click="ShowMore(Item)">نام کالا : {{Item.Name}}</h4>
+                            </div>
+                            <!-- end of product title -->
+
+                            <div class="product-price txtFont"><h5 class="txtFont" ng-click="FunShowDetail()">قیمت کالا : {{Item.Price}}</h5></div>
+                        </div>
+                        <!-- End of product info -->
+                    </div>
+                </div>
+                <!-- End of single product -->
+         
+        </div>
+    </div>
+</section>
+<!-- End of New Arrival type2-->
+<!-- top sellers type2-->
+<section class="pt-100 pb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <!-- section title -->
+                <div class="section-title-wrap">
+                    <div class="section-title">
+                        <h2 class="headFont">آیتم های فروشگاهی</h2>
+                    </div>
+                </div>
+                <!-- End of section title -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-lg-10">
+                <div class="row">
+                    <!-- single top sellers -->
+                    <div class="col-lg-6">
+                        <div class="single-top-seller type2 main-parent media" ng-repeat="Item in ListAllProductShow">
+                            <div class="top-seller-img normal-hover-parent">
+                                <img class="normal-state" style="border-radius:10%" ng-src="@Url.Content("~/FileArchive/{{Item.Img_Url}}")" alt="...">
+                            </div>
+                            <div class="single-seller-body media-body">
+                                <div class="product-rating">
+                                    <div class="star-rating">
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <h5 class="txtFont"><a href="#">نام کالا : {{Item.Name}}</a></h5>
+                                <h6 class="h5 txtFont">قیمت کالا : {{Item.Price}} ریال</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End of single top sellers -->
+                   
+                   
+                   
+                 
+     
+                </div>
+            </div>
+          
+        </div>
+    </div>
+</section>
+<!-- End of top sellers type2-->
+
+
+<!-- coming soon  -->
+<section>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 offset-md-1">
+                <!-- coming soon text-->
+                <div class="coming-soon-text">
+                    
+                    <h2 class="h1 coming-animation txtFont">به زودی</h2>
+                    
+                </div>
+                <!-- End of coming soon text-->
+            </div>
+            <div class="col-md-5">
+                <!-- coming soon image -->
+                <div class="coming-soon-img-wrap">
+                    <div class="coming-soon-img">
+                        <img src="assets/img/coming.png" data-rjs="2" alt="">
+                    </div>
+                </div>
+                <!-- End of coming soon image -->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End of coming soon  -->
+
+@section DeclareJS{
+    <script src="~/Areas/Panel/Scripts/Home/JsHome.js"></script>
+}
+
+
+
+

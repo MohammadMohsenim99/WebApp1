@@ -1,0 +1,249 @@
+
+@font-face {
+  font-family: 'BYekan';
+  src: url('/font/BYekan.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'BYek';
+  src: url('/font/Yekan.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Badr';
+  src: url('/font/Badr.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Baran';
+  src: url('/font/Baran.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Bardiya';
+  src: url('/font/Bardiya.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Compset';
+  src: url('/font/Compset.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Davat';
+  src: url('/font/Davat.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Elham';
+  src: url('/font/Elham.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'EsfB';
+  src: url('/font/EsfehanBold.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Fantezy';
+  src: url('/font/Fantezy.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Farnaz';
+  src: url('/font/Farnaz.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Ferdowsi';
+  src: url('/font/Ferdosi.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Hamid';
+  src: url('/font/Hamid.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Helal';
+  src: url('/font/Helal.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Homa';
+  src: url('/font/Homa.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'JadidB';
+  src: url('/font/JadidBold.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Jalal';
+  src: url('/font/Jalal.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'KoodakB';
+  src: url('/font/KoodakBold.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Koroush';
+  src: url('/font/Kourosh.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lotus';
+  src: url('/font/Lotus.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Mahsa';
+  src: url('/font/Mahsa.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MehrB';
+  src: url('/font/MehrBold.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Mitra';
+  src: url('/font/Mitra.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Morvarid';
+  src: url('/font/Morvarid.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Narm';
+  src: url('/font/Narm.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'NasimB';
+  src: url('/font/NasimBold.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Nazanin';
+  src: url('/font/Nazanin.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roya';
+  src: url('/font/Roya.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SetareB';
+  src: url('/font/SetarehBold.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Shiraz';
+  src: url('/font/Shiraz.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SinaB';
+  src: url('/font/SinaBold.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Tabassom';
+  src: url('/font/Tabassom.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Tehran';
+  src: url('/font/Tehran.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'TitrB';
+  src: url('/font/TitrBold.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'TitrTge';
+  src: url('/font/TitrTGEBold.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Traffic';
+  src: url('/font/Traffic.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'VahidB';
+  src: url('/font/VahidBold.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Yagut';
+  src: url('/font/Yagut.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Yas';
+  src: url('/font/Yas.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Zar';
+  src: url('/font/Zar.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Ziba';
+  src: url('/font/Ziba.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}

@@ -1,0 +1,66 @@
+﻿<h4 class="headFont">اطلاعات انبار </h4>
+<br/>
+<br/>
+<table class="table table-bordered">
+    <tr>
+        <td>نام کالا</td>
+        <td>قیمت کالا</td>
+        <td>تعداد ورودی</td>
+    </tr>
+    <tr>
+        <td>
+            <select ng-model="SelProduct" class="form-control">
+                <option ng-repeat="k in ListAllProduct" value="{{k.ID}}">{{k.Name}}</option>
+            </select>
+              
+        </td>
+        <td>
+            <input type="text" placeholder="قیمت کالا را وارد کنید " class="form-control txtFont" ng-model="txtPrice" />
+        </td>
+        <td>
+            <input type="text" placeholder="تعداد ورودی کالا را مشخص کنید " class="form-control txtFont" ng-model="txtEntry" />
+        </td>
+    </tr>
+</table>
+<input type="button" name="Save" value="افزودن" ng-disabled="varStatusDisSave" ng-click="FunctionSave()" class="btn btn-info btnFont" />
+<input type="button" name="Update" value=" ویرایش" ng-disabled="varStatusDisUpdate" ng-click="FunUpdate()" class="btn btn-default btnFont" />
+<br/>
+<br/>
+
+<h4 class="headFont"> کالا های وارد شده </h4>
+<br />
+<br />
+<table class="table table-bordered">
+    <tr>
+        <td colspan="6">
+            <input type="text" placeholder="جست و جو"  class="form-control txtFont" ng-model="txtSearch" />
+        </td>
+    </tr>
+    <tr>
+        <td>نام کالا</td>
+        <td>قیمت کالا</td>
+        <td>تعداد کالا</td>
+        <td>تاریخ و ساعت ورود </td>
+        <td>عملیات</td>
+    </tr>
+    <tr ng-repeat="Item in ListAllWareHouse | filter:txtSearch">
+        <td>
+           {{Item.Name}} 
+        </td>
+        <td>
+            {{Item.Price}}
+        </td>
+        <td>{{Item.EntryNo}}</td>
+        <td>{{Item.Date}} || {{Item.Time}}</td>
+        <td style="text-align:center">
+            <input type="Button" value="حذف" ng-click="FunDelete(Item.ID)" class="btn btn-danger btnFont" />
+            <input type="button" value="ویرایش" ng-click="funUpdateShow(Item)" class="btn btn-info btnFont" />
+        </td>
+    </tr>
+</table>
+<br/>
+<br/>
+
+@section DeclareJS{
+    <script src="~/Areas/Panel/Scripts/WareHouse/JsWareHouse.js"></script>
+}

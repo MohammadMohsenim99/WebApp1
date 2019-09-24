@@ -1,0 +1,67 @@
+﻿
+
+       
+ <h4 class="modal-title headFont">افزودن نوع کالا</h4>
+<table class="table table-bordered">
+    <tr>
+        <td>
+            <p class="tblFont"> نوع کالا :</p>
+        </td>
+        <td>
+            <input type="text" class="form-control txtFont" ng-model="txtTitle" placeholder="نوع کالای مورد نظر را وارد کنید " style="font-family:'B Yekan';" />
+        </td>
+    </tr>
+</table>
+            
+              
+               
+            
+                <button type="button" ng-disabled="varStatusDisSave" ng-click="FunSave()" class="btn btn-default btnFont" data-dismiss="modal">افزودن</button>
+                <button type="button" ng-disabled="varStatusDisUpdate" ng-click="FunUpdate()" class="btn btn-default btnFont" data-dismiss="modal" >ویرایش</button>
+   
+
+
+
+    <form style="position:center;">
+        <p class="headFont">لیست انواع کالا </p>
+        <br />
+
+        
+        <table dir="rtl" class="table table-bordered tblFont">
+            <tr>
+                <td colspan="4">
+                    <input type="text" style="font-family:'B Yekan'" class="form-control txtFont" ng-model="txtSearch" placeholder="جست و جو" />
+                </td>
+            </tr>
+            <tr>
+                <td class="tblFont">شماره</td>
+                <td ng-show="false">ID</td>
+                <td class="tblFont">عنوان</td>
+                <td class="tblFont">عملیات</td>
+            </tr>
+            <tr ng-repeat="Item in ListAllCategory | filter:txtSearch">
+                <td class="tblFont">{{$index+1}}</td>
+                <td ng-show="false">{{Item.ID}}</td>
+                <td class="tblFont">{{Item.Name}}</td>
+                <td class="tblFont">
+                    <input type="button" class="btn btn-danger btnFont" value="حذف" ng-click="FunDelete(Item.ID)"  />
+                    <input type="button" class="btn btn-default btnFont" value="ویرایش" ng-click="funUpdateShow(Item)" ></td>
+            </tr>
+        </table>
+
+
+    </form>
+    
+
+
+
+
+
+
+
+
+
+@section DeclareJS{
+    <script src="~/Areas/Panel/Scripts/Category/JsCategory.js"></script>
+}
+

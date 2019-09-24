@@ -1,0 +1,55 @@
+﻿
+@{
+    
+}
+
+<div>
+    <h1 class="headFont">مشخصات کالا</h1>
+    <table class="table table-bordered">
+        <tr>
+            <td class="headFont">مشخصات </td>
+            <td class="headFont">توضیحات</td>
+        </tr>
+        <tr>
+            <td>نام</td>
+            <td>{{ProName}}</td>
+        </tr>
+        <tr>
+            <td>دسته بندی</td>
+            <td>{{ProCat}}</td>
+        </tr>
+        <tr>
+            <td>ابعاد</td>
+            <td>{{ProDimension}}</td>
+        </tr>
+        <tr>
+            <td>رنگ</td>
+            <td>{{ProColor}}</td>
+        </tr>
+        <tr>
+            <td>وزن</td>
+            <td>{{ProWeigh}}</td>
+        </tr>
+        <tr>
+            <td>نوع بسته بندی</td>
+            <td>{{ProPack}}</td>
+        </tr>
+        <tr>
+            <td>محتویات جعبه</td>
+            <td>{{ProExtra}}</td>
+        </tr>
+        <tr>
+            <td>سایر توضیحات</td>
+            <td>{{ProDesc}}</td>
+        </tr>
+        <tr>
+            <td>قیمت</td>
+            <td>{{ProPrice}}</td>
+        </tr>
+    </table>
+</div>
+
+@section DeclareJS{
+   
+<script src="~/Areas/Panel/Scripts/ProductDetail/JsProductDetail.js"></script>
+}

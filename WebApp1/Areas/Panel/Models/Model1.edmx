@@ -1,0 +1,463 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ShopDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TB_Attribute">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="15" />
+          <Property Name="CategoryID" Type="int" />
+          <Property Name="Dimension" Type="nvarchar" MaxLength="25" />
+          <Property Name="Color" Type="nvarchar" MaxLength="10" />
+          <Property Name="Weigh" Type="float" />
+          <Property Name="PackingType" Type="nvarchar" MaxLength="20" />
+          <Property Name="ExtraParts" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="Img_Url" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TB_Category">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="TB_FUsers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="20" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="20" />
+          <Property Name="FatherName" Type="nvarchar" MaxLength="20" />
+          <Property Name="NationalID" Type="int" />
+          <Property Name="Sex" Type="nvarchar" MaxLength="15" />
+          <Property Name="BirthDate" Type="nvarchar" MaxLength="25" />
+          <Property Name="Email" Type="nvarchar" MaxLength="20" />
+          <Property Name="MobileNo" Type="int" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="MarriageStatus" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="TB_WareHouse">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductID" Type="int" />
+          <Property Name="Price" Type="float" />
+          <Property Name="EntryNo" Type="int" />
+          <Property Name="Date" Type="nvarchar" MaxLength="20" />
+          <Property Name="Time" Type="nvarchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="WishList">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="ProductID" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ShopDatabase.dbo.ShowAllAttribute' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ShowAllAttribute">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="15" />
+          <Property Name="CategoryID" Type="int" />
+          <Property Name="Dimension" Type="nvarchar" MaxLength="25" />
+          <Property Name="Color" Type="nvarchar" MaxLength="10" />
+          <Property Name="Weigh" Type="float" />
+          <Property Name="PackingType" Type="nvarchar" MaxLength="20" />
+          <Property Name="ExtraParts" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="Price" Type="float" />
+          <Property Name="CatName" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ShopDatabase.dbo.UserShow' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="UserShow">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="Name" Type="nvarchar" MaxLength="15" />
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="CategoryID" Type="int" />
+          <Property Name="Dimension" Type="nvarchar" MaxLength="25" />
+          <Property Name="Color" Type="nvarchar" MaxLength="10" />
+          <Property Name="Weigh" Type="float" />
+          <Property Name="PackingType" Type="nvarchar" MaxLength="20" />
+          <Property Name="ExtraParts" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="CatName" Type="nvarchar" MaxLength="20" />
+          <Property Name="Price" Type="float" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ShopDatabase.dbo.WareHouse_View' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="WareHouse_View">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ProductID" Type="int" />
+          <Property Name="Price" Type="float" />
+          <Property Name="EntryNo" Type="int" />
+          <Property Name="Time" Type="nvarchar" MaxLength="25" />
+          <Property Name="Date" Type="nvarchar" MaxLength="20" />
+          <Property Name="Name" Type="nvarchar" MaxLength="15" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ShopDatabase.dbo.WishView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="WishView">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="ProductID" Type="int" />
+          <Property Name="Price" Type="float" />
+          <Property Name="Name" Type="nvarchar" MaxLength="15" />
+        </EntityType>
+        <EntityContainer Name="ShopDatabaseModelStoreContainer">
+          <EntitySet Name="TB_Attribute" EntityType="Self.TB_Attribute" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Category" EntityType="Self.TB_Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_FUsers" EntityType="Self.TB_FUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_WareHouse" EntityType="Self.TB_WareHouse" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WishList" EntityType="Self.WishList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShowAllAttribute" EntityType="Self.ShowAllAttribute" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ShowAllAttribute].[ID] AS [ID], 
+    [ShowAllAttribute].[Name] AS [Name], 
+    [ShowAllAttribute].[CategoryID] AS [CategoryID], 
+    [ShowAllAttribute].[Dimension] AS [Dimension], 
+    [ShowAllAttribute].[Color] AS [Color], 
+    [ShowAllAttribute].[Weigh] AS [Weigh], 
+    [ShowAllAttribute].[PackingType] AS [PackingType], 
+    [ShowAllAttribute].[ExtraParts] AS [ExtraParts], 
+    [ShowAllAttribute].[Description] AS [Description], 
+    [ShowAllAttribute].[Price] AS [Price], 
+    [ShowAllAttribute].[CatName] AS [CatName]
+    FROM [dbo].[ShowAllAttribute] AS [ShowAllAttribute]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="UserShow" EntityType="Self.UserShow" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [UserShow].[Name] AS [Name], 
+    [UserShow].[ID] AS [ID], 
+    [UserShow].[CategoryID] AS [CategoryID], 
+    [UserShow].[Dimension] AS [Dimension], 
+    [UserShow].[Color] AS [Color], 
+    [UserShow].[Weigh] AS [Weigh], 
+    [UserShow].[PackingType] AS [PackingType], 
+    [UserShow].[ExtraParts] AS [ExtraParts], 
+    [UserShow].[Description] AS [Description], 
+    [UserShow].[CatName] AS [CatName], 
+    [UserShow].[Price] AS [Price]
+    FROM [dbo].[UserShow] AS [UserShow]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="WareHouse_View" EntityType="Self.WareHouse_View" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [WareHouse_View].[ID] AS [ID], 
+    [WareHouse_View].[ProductID] AS [ProductID], 
+    [WareHouse_View].[Price] AS [Price], 
+    [WareHouse_View].[EntryNo] AS [EntryNo], 
+    [WareHouse_View].[Time] AS [Time], 
+    [WareHouse_View].[Date] AS [Date], 
+    [WareHouse_View].[Name] AS [Name]
+    FROM [dbo].[WareHouse_View] AS [WareHouse_View]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="WishView" EntityType="Self.WishView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [WishView].[ID] AS [ID], 
+    [WishView].[UserID] AS [UserID], 
+    [WishView].[ProductID] AS [ProductID], 
+    [WishView].[Price] AS [Price], 
+    [WishView].[Name] AS [Name]
+    FROM [dbo].[WishView] AS [WishView]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ShopDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TB_Attribute">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="CategoryID" Type="Int32" />
+          <Property Name="Dimension" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Color" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Weigh" Type="Double" />
+          <Property Name="PackingType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ExtraParts" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Img_Url" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TB_Category">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TB_FUsers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FatherName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="NationalID" Type="Int32" />
+          <Property Name="Sex" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="BirthDate" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MobileNo" Type="Int32" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MarriageStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TB_WareHouse">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductID" Type="Int32" />
+          <Property Name="Price" Type="Double" />
+          <Property Name="EntryNo" Type="Int32" />
+          <Property Name="Date" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Time" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="WishList">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="ProductID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ShowAllAttribute">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="CategoryID" Type="Int32" />
+          <Property Name="Dimension" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Color" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Weigh" Type="Double" />
+          <Property Name="PackingType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ExtraParts" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Double" />
+          <Property Name="CatName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="UserShow">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="Name" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="CategoryID" Type="Int32" />
+          <Property Name="Dimension" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Color" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Weigh" Type="Double" />
+          <Property Name="PackingType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ExtraParts" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CatName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Double" />
+        </EntityType>
+        <EntityType Name="WareHouse_View">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ProductID" Type="Int32" />
+          <Property Name="Price" Type="Double" />
+          <Property Name="EntryNo" Type="Int32" />
+          <Property Name="Time" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="WishView">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="ProductID" Type="Int32" />
+          <Property Name="Price" Type="Double" />
+          <Property Name="Name" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="ShopDatabaseEntitiesNew" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TB_Attribute" EntityType="Self.TB_Attribute" />
+          <EntitySet Name="TB_Category" EntityType="Self.TB_Category" />
+          <EntitySet Name="TB_FUsers" EntityType="Self.TB_FUsers" />
+          <EntitySet Name="TB_WareHouse" EntityType="Self.TB_WareHouse" />
+          <EntitySet Name="WishLists" EntityType="Self.WishList" />
+          <EntitySet Name="ShowAllAttributes" EntityType="Self.ShowAllAttribute" />
+          <EntitySet Name="UserShows" EntityType="Self.UserShow" />
+          <EntitySet Name="WareHouse_View" EntityType="Self.WareHouse_View" />
+          <EntitySet Name="WishViews" EntityType="Self.WishView" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ShopDatabaseModelStoreContainer" CdmEntityContainer="ShopDatabaseEntitiesNew">
+          <EntitySetMapping Name="TB_Attribute">
+            <EntityTypeMapping TypeName="ShopDatabaseModel.TB_Attribute">
+              <MappingFragment StoreEntitySet="TB_Attribute">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="Dimension" ColumnName="Dimension" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="Weigh" ColumnName="Weigh" />
+                <ScalarProperty Name="PackingType" ColumnName="PackingType" />
+                <ScalarProperty Name="ExtraParts" ColumnName="ExtraParts" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Img_Url" ColumnName="Img_Url" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_Category">
+            <EntityTypeMapping TypeName="ShopDatabaseModel.TB_Category">
+              <MappingFragment StoreEntitySet="TB_Category">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_FUsers">
+            <EntityTypeMapping TypeName="ShopDatabaseModel.TB_FUsers">
+              <MappingFragment StoreEntitySet="TB_FUsers">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+                <ScalarProperty Name="NationalID" ColumnName="NationalID" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="MarriageStatus" ColumnName="MarriageStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_WareHouse">
+            <EntityTypeMapping TypeName="ShopDatabaseModel.TB_WareHouse">
+              <MappingFragment StoreEntitySet="TB_WareHouse">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="EntryNo" ColumnName="EntryNo" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WishLists">
+            <EntityTypeMapping TypeName="ShopDatabaseModel.WishList">
+              <MappingFragment StoreEntitySet="WishList">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShowAllAttributes">
+            <EntityTypeMapping TypeName="ShopDatabaseModel.ShowAllAttribute">
+              <MappingFragment StoreEntitySet="ShowAllAttribute">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="Dimension" ColumnName="Dimension" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="Weigh" ColumnName="Weigh" />
+                <ScalarProperty Name="PackingType" ColumnName="PackingType" />
+                <ScalarProperty Name="ExtraParts" ColumnName="ExtraParts" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="CatName" ColumnName="CatName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserShows">
+            <EntityTypeMapping TypeName="ShopDatabaseModel.UserShow">
+              <MappingFragment StoreEntitySet="UserShow">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="Dimension" ColumnName="Dimension" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="Weigh" ColumnName="Weigh" />
+                <ScalarProperty Name="PackingType" ColumnName="PackingType" />
+                <ScalarProperty Name="ExtraParts" ColumnName="ExtraParts" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CatName" ColumnName="CatName" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WareHouse_View">
+            <EntityTypeMapping TypeName="ShopDatabaseModel.WareHouse_View">
+              <MappingFragment StoreEntitySet="WareHouse_View">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="EntryNo" ColumnName="EntryNo" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WishViews">
+            <EntityTypeMapping TypeName="ShopDatabaseModel.WishView">
+              <MappingFragment StoreEntitySet="WishView">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
